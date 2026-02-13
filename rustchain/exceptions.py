@@ -6,7 +6,7 @@ class RustChainError(Exception):
     pass
 
 
-class ConnectionError(RustChainError):
+class RustchainConnectionError(RustChainError):
     """Raised when connection to node fails"""
     pass
 

@@ -29,7 +29,7 @@ class Wallet:
         
         # Generate address
         address_hash = hashlib.sha256(public_key).hexdigest()[:40]
-        address = f"{prefix}-{address_hash[:8]}-{address_hash[8:16]}-{address_hash[16:24]}"
+        address = f"{prefix}-{address_hash[:8]}-{address_hash[8:16]}-{address_hash[16:24]}-{address_hash[24:32]}"
         
         return cls(
             address=address,
@@ -42,7 +42,7 @@ class Wallet:
         """Create wallet from existing private key"""
         public_key = hashlib.sha256(private_key).digest()
         address_hash = hashlib.sha256(public_key).hexdigest()[:40]
-        address = f"{prefix}-{address_hash[:8]}-{address_hash[8:16]}-{address_hash[16:24]}"
+        address = f"{prefix}-{address_hash[:8]}-{address_hash[8:16]}-{address_hash[16:24]}-{address_hash[24:32]}"
         
         return cls(
             address=address,
